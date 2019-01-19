@@ -596,7 +596,7 @@ function xmldb_local_o365_upgrade($oldversion) {
             set_config('bot_feature_enabled', '0', 'local_o365');
         }
 
-        check_sharedsecret();
+        local_o365_check_sharedsecret();
 
         upgrade_plugin_savepoint($result, '2016062014', 'local', 'o365');
     }
