@@ -90,6 +90,8 @@ class local_o365_webservices_utils_testcase extends \advanced_testcase {
         // [[coursemoduleid]] is replaced with the id of the *last* course_module record inserted.
         // [[courseid]] is replaced with the generated course ID.
 
+        $newlangstring = new lang_string('invalidrecord', 'error', 'course');
+
         return [
             'Course not found (no course)' => [
                 false,
@@ -100,7 +102,7 @@ class local_o365_webservices_utils_testcase extends \advanced_testcase {
                         'intro' => 'test',
                     ],
                 ],
-                ['dml_missing_record_exception', new lang_string('invalidrecord', 'error', 'course')],
+                ['dml_missing_record_exception', $newlangstring->out()],
                 1,
                 10,
                 [],
@@ -120,7 +122,7 @@ class local_o365_webservices_utils_testcase extends \advanced_testcase {
                         ],
                     ],
                 ],
-                ['dml_missing_record_exception', new lang_string('invalidrecord', 'error', 'course')],
+                ['dml_missing_record_exception', $newlangstring->out()],
                 1,
                 10,
                 [],
